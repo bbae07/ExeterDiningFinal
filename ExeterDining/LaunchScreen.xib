@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="weX-YD-nQS">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="0pJ-C7-wJt">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="0pJ-C7-wJt" secondAttribute="bottom" id="4ud-9l-YjC"/>
+                <constraint firstItem="0pJ-C7-wJt" firstAttribute="top" secondItem="weX-YD-nQS" secondAttribute="top" id="AU3-3a-aVF"/>
+                <constraint firstItem="0pJ-C7-wJt" firstAttribute="leading" secondItem="weX-YD-nQS" secondAttribute="leading" id="Bfl-V7-c1D"/>
+                <constraint firstAttribute="trailing" secondItem="0pJ-C7-wJt" secondAttribute="trailing" id="g3D-KK-MbA"/>
+            </constraints>
+            <point key="canvasLocation" x="591" y="103"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="launchscreen" width="2048" height="2048"/>
+    </resources>
+</document>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D7781926-ABA6-4524-8D79-93C7E98B93FB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9EDF1A80FA6041AAA7793AD9A5A93F2A6C36135A</key>
+		<string>https://github.com/bbae07/ExeterDining.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ExeterDining/ExeterDining.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9EDF1A80FA6041AAA7793AD9A5A93F2A6C36135A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bbae07/ExeterDining.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9EDF1A80FA6041AAA7793AD9A5A93F2A6C36135A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9EDF1A80FA6041AAA7793AD9A5A93F2A6C36135A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ExeterDining</string>
+		</dict>
+	</array>
+</dict>
+</plist>
