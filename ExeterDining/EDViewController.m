@@ -20,6 +20,7 @@
     bool isFullDinner;
     NSMutableArray *fullMeals;
 }
+#define TAG_BUTTON_MORE 11011
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -222,13 +223,26 @@
     NSMutableArray *restaurant = [self.Menus objectAtIndex:indexPath.section];
     NSString *menu = [restaurant objectAtIndex:indexPath.row];
     [cell.textLabel setText:menu];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (indexPath.row == 3 && ![[fullMeals objectAtIndex:indexPath.section] boolValue]) {
         [cell.textLabel setText:@"More..."];
+        cell.tag = TAG_BUTTON_MORE;
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     }
     // Configure the cell...
     
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *clickedCell = [tableView cellForRowAtIndexPath:indexPath];
+    NSInteger mealNumber = indexPath.section + 1;
+    if (clickedCell.tag == TAG_BUTTON_MORE) {
+        UIButton *btnForMore = [[UIButton alloc] init];
+        btnForMore.tag = mealNumber;
+        [self sectionTapped:btnForMore];
+        //[btn addTarget:self action:@selector(sectionTapped:) forControlEvents:UIControlEventTouchDown];
+    }
 }
 
 @end
