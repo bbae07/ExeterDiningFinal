@@ -8,7 +8,7 @@
 
 #import "EDViewController.h"
 #import <Crashlytics/Crashlytics.h>
-
+#import <Google/Analytics.h>
 
 @interface EDViewController ()
 
@@ -21,6 +21,12 @@
     NSMutableArray *fullMeals;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:[NSString stringWithFormat:@"PAGE_VIEW"]];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
