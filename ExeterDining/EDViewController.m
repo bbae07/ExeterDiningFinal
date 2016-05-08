@@ -44,6 +44,9 @@
     ServerConnection *server = [[ServerConnection alloc] init];
     [server getMenu:^(NSInteger status, NSDictionary *wMenu, NSDictionary *eMenu, NSError *error) {
         _wMenu = [wMenu objectForKey:@"Wetherell"];
+        if (!_wMenu) {
+            
+        }
         _eMenu = [eMenu objectForKey:@"Elm Street"];
         [self toWetherell];
         [_menuTable reloadData];
@@ -128,18 +131,36 @@
 }
 
 - (void)toElmStreet{
-    self.eBreakfast = [[NSMutableArray alloc] initWithArray:([_eMenu objectForKey:@"breakfast"])];
-    self.eLunch = [[NSMutableArray alloc] initWithArray:([_eMenu objectForKey:@"lunch"])];
-    self.eDinner = [[NSMutableArray alloc] initWithArray:([_eMenu objectForKey:@"dinner"])];
+    self.eBreakfast = [[NSMutableArray alloc] init];
+    self.eLunch = [[NSMutableArray alloc] init];
+    self.eDinner = [[NSMutableArray alloc] init];
+    if ([_eMenu objectForKey:@"breakfast"] != [NSNull null]) {
+        self.eBreakfast = [[NSMutableArray alloc] initWithArray:([_eMenu objectForKey:@"breakfast"])];
+    }
+    if ([_eMenu objectForKey:@"lunch"] != [NSNull null]) {
+        self.eLunch = [[NSMutableArray alloc] initWithArray:([_eMenu objectForKey:@"lunch"])];
+    }
+    if ([_eMenu objectForKey:@"dinner"] != [NSNull null]) {
+        self.eDinner = [[NSMutableArray alloc] initWithArray:([_eMenu objectForKey:@"dinner"])];
+    }
     self.Menus = [[NSMutableArray alloc] initWithObjects:_eBreakfast,_eLunch,_eDinner, nil];
     [_menuTable reloadData];
 }
 
 - (void)toWetherell{
     self.restaurants = [[NSArray alloc] initWithObjects: @"Breakfast",@"Lunch",@"Dinner", nil];
-    self.wBreakfast = [[NSMutableArray alloc] initWithArray:([_wMenu objectForKey:@"breakfast"])];
-    self.wLunch = [[NSMutableArray alloc] initWithArray:([_wMenu objectForKey:@"lunch"])];
-    self.wDinner = [[NSMutableArray alloc] initWithArray:([_wMenu objectForKey:@"dinner"])];
+    self.wBreakfast = [[NSMutableArray alloc] init];
+    self.wLunch = [[NSMutableArray alloc] init];
+    self.wDinner = [[NSMutableArray alloc] init];
+    if ([_wMenu objectForKey:@"breakfast"] != [NSNull null]) {
+        self.wBreakfast = [[NSMutableArray alloc] initWithArray:([_wMenu objectForKey:@"breakfast"])];
+    }
+    if ([_wMenu objectForKey:@"lunch"] != [NSNull null]) {
+        self.wLunch = [[NSMutableArray alloc] initWithArray:([_wMenu objectForKey:@"lunch"])];
+    }
+    if ([_wMenu objectForKey:@"dinner"] != [NSNull null]) {
+        self.wDinner = [[NSMutableArray alloc] initWithArray:([_wMenu objectForKey:@"dinner"])];
+    }
     self.Menus = [[NSMutableArray alloc] initWithObjects:_wBreakfast,_wLunch,_wDinner, nil];
     [_menuTable reloadData];
 }
@@ -230,8 +251,7 @@
         cell.tag = TAG_BUTTON_MORE;
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     }
-    // Configure the cell...
-    
+
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -241,7 +261,6 @@
         UIButton *btnForMore = [[UIButton alloc] init];
         btnForMore.tag = mealNumber;
         [self sectionTapped:btnForMore];
-        //[btn addTarget:self action:@selector(sectionTapped:) forControlEvents:UIControlEventTouchDown];
     }
 }
 
