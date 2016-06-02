@@ -325,14 +325,14 @@
 		};
 		5946C5A81CDDB81200148B21 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 146cdba386a417ee78c77b18817a3015afa702ba 994b564c0413e6068a5ad961c11e798bc1ee4b354e3b1ce82459066953fe6db6";
 		};
