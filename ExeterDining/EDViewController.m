@@ -18,6 +18,7 @@
     bool isFullBreakfast;
     bool isFullLunch;
     bool isFullDinner;
+    
     NSMutableArray *fullMeals;
 }
 #define TAG_BUTTON_MORE 11011
@@ -131,9 +132,9 @@
 }
 
 - (void)toElmStreet{
-    self.eBreakfast = [[NSMutableArray alloc] init];
-    self.eLunch = [[NSMutableArray alloc] init];
-    self.eDinner = [[NSMutableArray alloc] init];
+    self.eBreakfast = [[NSMutableArray alloc] initWithObjects:@"No Menu", nil];
+    self.eLunch = [[NSMutableArray alloc] initWithObjects:@"No Menu", nil];
+    self.eDinner = [[NSMutableArray alloc] initWithObjects:@"No Menu", nil];
     if ([_eMenu objectForKey:@"breakfast"] != [NSNull null]) {
         self.eBreakfast = [[NSMutableArray alloc] initWithArray:([_eMenu objectForKey:@"breakfast"])];
     }
@@ -149,9 +150,9 @@
 
 - (void)toWetherell{
     self.restaurants = [[NSArray alloc] initWithObjects: @"Breakfast",@"Lunch",@"Dinner", nil];
-    self.wBreakfast = [[NSMutableArray alloc] init];
-    self.wLunch = [[NSMutableArray alloc] init];
-    self.wDinner = [[NSMutableArray alloc] init];
+    self.wBreakfast = [[NSMutableArray alloc] initWithObjects:@"No Menu", nil];
+    self.wLunch = [[NSMutableArray alloc] initWithObjects:@"No Menu", nil];
+    self.wDinner = [[NSMutableArray alloc] initWithObjects:@"No Menu", nil];
     if ([_wMenu objectForKey:@"breakfast"] != [NSNull null]) {
         self.wBreakfast = [[NSMutableArray alloc] initWithArray:([_wMenu objectForKey:@"breakfast"])];
     }
